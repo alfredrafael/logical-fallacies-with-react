@@ -1,20 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './style/createNewStyle.scss'
 import axios from 'axios'
 
 
-class CreateNew extends React.Component {
+class FallaciesIndex extends React.Component {
   render(){
     return (
       <React.Fragment>
         <div style={{border: 'solid black 1px'}}>
-          <h4 style={{margin:'10px'}}> This is the CreateNew Component!</h4>
-          <Link to="/home/">Home Page</Link>
+          <h4 style={{margin:'10px'}}> This is the HOME component! </h4>
+          <Link to="/FallaciesIndex/">Go to see all</Link>
+
         </div>
       </React.Fragment>
     )
   }
 }
 
-export default CreateNew
+export default FallaciesIndex
+
+
+

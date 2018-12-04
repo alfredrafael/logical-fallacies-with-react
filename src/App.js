@@ -13,6 +13,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import FallaciesIndex from './FallaciesIndex'
 import CreateNew from './CreateNew'
 import ShowFallacy from './ShowFallacy'
+import HomeComponent from './HomeComponent'
 
 
 
@@ -63,7 +64,11 @@ class App extends Component {
           )} />
         </main>
 
-        <FallaciesIndex />
+        <Route exact path="/fallaciesIndex" component={FallaciesIndex} />
+        <Route exact path="/createNew" component={CreateNew} />
+        <Route exact path="/showFallacy" component={ShowFallacy} />
+        <Route exact path="/home" component={HomeComponent} />
+
         <CreateNew />
         <ShowFallacy />
 
