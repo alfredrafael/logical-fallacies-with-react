@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 import './App.scss'
 import { Route, Link } from 'react-router-dom'
 
+// authentication and custom components
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+// added components
+import FallaciesIndex from './FallaciesIndex'
+import CreateNew from './CreateNew'
+import ShowFallacy from './ShowFallacy'
+
+
 
 class App extends Component {
   constructor () {
@@ -55,6 +62,11 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
         </main>
+
+        <FallaciesIndex />
+        <CreateNew />
+        <ShowFallacy />
+
       </React.Fragment>
     )
   }
