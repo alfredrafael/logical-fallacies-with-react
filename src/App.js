@@ -74,7 +74,6 @@ class App extends Component {
         
         <Route exact path="/flash_cards/:id" component={ShowFallacy} />
         <Route exact path="/home" component={HomeComponent} />
-        <Route exact path="/unauthHome" component={UnauthenticatedHome} />
 
 
 
@@ -84,6 +83,8 @@ class App extends Component {
 }
 
 export default App
+
+//         <Route exact path="/unauthHome" component={UnauthenticatedHome} />
 
 //        <Route exact path="/createNew" component={CreateNew} />
 

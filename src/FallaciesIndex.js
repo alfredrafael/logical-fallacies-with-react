@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../src/apiConfig.js'
+import DeleteCard from './DeleteCard.js'
 
 
 class FallaciesIndex extends React.Component {
@@ -14,24 +15,25 @@ class FallaciesIndex extends React.Component {
       this.setState({flash_cards:response.data.flash_cards})
     }
 
-    handleDelete = (user, id) => {
-      console.log(user)
-      return fetch(apiUrl + `/flash_cards/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization':`Token token=${user.token}`
-        },
-        body: JSON.stringify({id})
-      }).then(alert('this is the .then, firing'))
-    }
-
-
+    // handleDelete = (user, id) => {
+    //   return fetch(apiUrl + `/flash_cards/${id}`, {
+    //     method: 'DELETE',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Authorization':`Token token=${user.token}`
+    //     },
+    //     body: JSON.stringify({id})
+    //   })
+    // }
     render() {
+
       const flash_cards_rows = this.state.flash_cards.map(flash_card => {
+
         const {id, fallacy_name, fallacy_example} = flash_card
+        const { user } = this.props
 
         return (
+
           <tr key={id}>
             <td>
               <Link to={`/flash_cards/${id}`}>{ fallacy_name }</Link>
@@ -41,9 +43,7 @@ class FallaciesIndex extends React.Component {
               <Link to={`/flash_cards/${id}/edit`}>Edit</Link>
             </td>
             <td>
-              <a href="#" onClick={ (event)=> {
-                return this.handleDelete(event, id)
-              }}>/ Delete </a>
+              <DeleteCard id={id} user={user} component={DeleteCard}/>
             </td>
           </tr>
         )

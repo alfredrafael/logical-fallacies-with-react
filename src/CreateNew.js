@@ -33,6 +33,7 @@ class CreateNew extends React.Component {
   // }
 
   createCard = (event, user) => {
+    console.log(user)
     event.preventDefault()
     const flash_card = this.state.flash_card
     console.log(flash_card)
