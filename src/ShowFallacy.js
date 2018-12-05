@@ -1,19 +1,45 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 
 
-class ShowFallacy extends React.Component {
-  render(){
+class FallacyShow extends React.Component {
+  constructor(props){
+    super (props)
+    this.state = {
+      flash_card:{
+        fallacy_name: '',
+        fallacy_example: ''
+      }
+    }
+  }
+
+  async componentDidMount(){
+
+    const id = this.props.match.params.id
+    console.log(id)
+    const response = await axios.get(`http://localhost:4741/flash_cards/${id}`)
+    console.log(flash_card)
+
+    const flash_card = response.data.flash_card
+    console.log(flash_card)
+
+    this.setState({
+      flash_card: flash_card
+    }),
+    console.log(flash_card)
+  }
+  render() {
     return (
       <React.Fragment>
-        <div style={{border: 'solid black 1px'}}>
-          <h4 style={{margin:'10px'}}> This is the ShowFallacy Component!</h4>
-          <Link to="/createNew/">Click to Create a new fallacy</Link>
-        </div>
+        <h4>Fallacy:</h4>
+        <p> This is the name: {this.state.flash_card.fallacy_name}</p>
+        <p> This is the example: {this.state.flash_card.fallacy_example}</p>
+
       </React.Fragment>
     )
-  }
+  };
+
 }
 
-export default ShowFallacy
+export default withRouter(FallacyShow)

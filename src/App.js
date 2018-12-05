@@ -14,7 +14,7 @@ import FallaciesIndex from './FallaciesIndex'
 import CreateNew from './CreateNew'
 import ShowFallacy from './ShowFallacy'
 import HomeComponent from './HomeComponent'
-
+import UnauthenticatedHome from './UnauthenticatedHome'
 
 
 class App extends Component {
@@ -64,13 +64,19 @@ class App extends Component {
           )} />
         </main>
 
-        <Route exact path="/fallaciesIndex" component={FallaciesIndex} />
-        <Route exact path="/createNew" component={CreateNew} />
-        <Route exact path="/showFallacy" component={ShowFallacy} />
-        <Route exact path="/home" component={HomeComponent} />
+        <AuthenticatedRoute user={user} path='/flash_cards' render={() => (
+          <FallaciesIndex user={user} />
+        )} />
 
-        <CreateNew />
-        <ShowFallacy />
+        <Route exact path="/createNew" render={()=>(
+          <CreateNew user={user}/>
+        )} />
+        
+        <Route exact path="/flash_cards/:id" component={ShowFallacy} />
+        <Route exact path="/home" component={HomeComponent} />
+        <Route exact path="/unauthHome" component={UnauthenticatedHome} />
+
+
 
       </React.Fragment>
     )
@@ -78,3 +84,11 @@ class App extends Component {
 }
 
 export default App
+
+//        <Route exact path="/createNew" component={CreateNew} />
+
+//        <Route exact path="/flash_cards" component={FallaciesIndex} />
+
+//        <Route exact path="/flash_cards" render={()=>(
+//        <FallaciesIndex user={user}/>
+//        )} />
