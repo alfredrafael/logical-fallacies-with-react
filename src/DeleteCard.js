@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-dom'
+import axios from 'axios'
 import apiUrl from './apiConfig.js'
+import { browserHistory } from 'react-router'
 
 
 class DeleteCard extends React.Component{
@@ -16,10 +18,9 @@ class DeleteCard extends React.Component{
           'Content-Type': 'application/json',
           'Authorization':`Token token=${user.token}`
         }
-
-      })
-      this.props.history.push('/flash_cards')
+      }).then(() => this.props.history.push('/home'))
     }
+
     render(){
 
       return (

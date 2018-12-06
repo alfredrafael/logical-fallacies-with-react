@@ -49,7 +49,7 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} />
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
-        
+
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
@@ -74,14 +74,16 @@ class App extends Component {
         )} />
 
         <Route exact path="/createNew" render={()=>(
-          <CreateNew user={user}/>
+          <CreateNew user={user} />
         )} />
-               
+
         <Route exact path="/flash_cards/:id" render={()=>(
           <ShowFallacy user={user}/>
         )} />
-        
+
         <Route exact path="/home" component={HomeComponent} />
+        
+        <Route exact path="/" component={UnauthenticatedHome} />
 
 
 

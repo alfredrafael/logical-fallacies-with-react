@@ -29,7 +29,7 @@ class FallacyShow extends React.Component {
     this.setState({
       flash_card: flash_card
     })
-    console.log(flash_card)
+    // console.log(flash_card)
   }
   render() {
     const {fallacy_name, fallacy_example} = this.state

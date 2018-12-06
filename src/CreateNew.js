@@ -13,7 +13,7 @@ class CreateNew extends React.Component {
     },
     flashMessage: ''
   }
-  
+
   handleChange = (event) => {
 
     const newCard = { ...this.state.flash_card, [event.target.name]: event.target.value }
@@ -22,15 +22,6 @@ class CreateNew extends React.Component {
       flash_card: newCard
     })
   }
-
-  // createCard = async (event) => {
-  //   event.preventDefault()
-  //   const flash_card = this.state.flash_card
-  //   const response = await axios.post('http://localhost:4741/flash_cards', {flash_card})
-  //     .then(alert('hello'))
-  //   this.props.history.push('/flash_cards')
-  //   console.log(response)
-  // }
 
   createCard = (event, user) => {
     console.log(user)
@@ -45,16 +36,13 @@ class CreateNew extends React.Component {
       },
 
       body: JSON.stringify({
-        
+
         flash_card: {
           fallacy_name: flash_card.fallacy_name,
           fallacy_example: flash_card.fallacy_example
         }
       })
     })
-    // .then((response) => {
-    //  this.props.history.push('/flash_cards')
-    //   })
   }
 
   render() {

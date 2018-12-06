@@ -42,7 +42,7 @@ class EditCard extends React.Component {
           fallacy_example: fallacy_example
         }
       })
-    })
+    }).then(this.props.history.push('/home'))
   }
 
   async componentDidMount() {
