@@ -1,14 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, browserHistory, withRouter, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './apiConfig.js'
-import { browserHistory } from 'react-router'
 
 
 class DeleteCard extends React.Component{
     handleDelete = event => {
       event.preventDefault()
-      console.log(this.props)
+      console.log('This is the thing we are looking for: ', this.props)
       const { id } = this.props
       const user = this.props.user
 
@@ -18,7 +17,9 @@ class DeleteCard extends React.Component{
           'Content-Type': 'application/json',
           'Authorization':`Token token=${user.token}`
         }
-      }).then(() => this.props.history.push('/home'))
+      }).then(()=>{
+        this.props.history.push('/home')
+      })
     }
 
     render(){
@@ -33,4 +34,6 @@ class DeleteCard extends React.Component{
     }
 }
 
-export default DeleteCard
+export default withRouter(DeleteCard)
+
+// then(this.props.history.push('/home'))

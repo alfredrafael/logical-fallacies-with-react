@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import './style/createNewStyle.scss'
 import axios from 'axios'
 import apiUrl from '../src/apiConfig.js'
-
 
 class CreateNew extends React.Component {
   state = {
@@ -34,14 +33,14 @@ class CreateNew extends React.Component {
         'Content-Type': 'application/json',
         'Authorization':`Token token=${user.token}`
       },
-
       body: JSON.stringify({
-
         flash_card: {
           fallacy_name: flash_card.fallacy_name,
           fallacy_example: flash_card.fallacy_example
         }
       })
+    }).then(()=>{
+      this.props.history.push('/home')
     })
   }
 
@@ -65,4 +64,4 @@ class CreateNew extends React.Component {
   }
 }
 
-export default CreateNew
+export default withRouter(CreateNew)

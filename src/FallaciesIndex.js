@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../src/apiConfig.js'
 import DeleteCard from './DeleteCard.js'
+import ShowFallacy from './ShowFallacy.js'
+import { BrowserRouter as Router, browserHistory, withRouter, Route, Link } from 'react-router-dom'
+
 
 
 class FallaciesIndex extends React.Component {
@@ -57,10 +59,9 @@ class FallaciesIndex extends React.Component {
         </React.Fragment>
       )
     }
-
 }
 
-export default FallaciesIndex
+export default withRouter(FallaciesIndex)
 
 
 // async handleDelete(event, id) {

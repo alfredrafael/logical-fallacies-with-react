@@ -1,0 +1,46 @@
+.testing {
+    background: blue;
+  }
+
+  .first-page-component {
+      color: #fff;
+      text-align: center;
+    }
+
+    div {
+      height: 100%;
+      margin-top: 0;
+    }
+
+    article {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    /* Pattern styles */
+    .left-and-right {
+      display: table;
+      width: 100%;
+      margin: -1.5em 0;
+    }
+
+    .left-half {
+      background-color: rgb(133, 133, 233);
+      position: absolute;
+      left: 0px;
+      width: 50%;
+    }
+
+    .right-half {
+      background-color: #5276ac;
+      position: absolute;
+      right: 0px;
+      width: 50%;
+    }
