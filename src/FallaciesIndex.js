@@ -15,20 +15,9 @@ class FallaciesIndex extends React.Component {
       this.setState({flash_cards:response.data.flash_cards})
     }
 
-    // handleDelete = (user, id) => {
-    //   return fetch(apiUrl + `/flash_cards/${id}`, {
-    //     method: 'DELETE',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Authorization':`Token token=${user.token}`
-    //     },
-    //     body: JSON.stringify({id})
-    //   })
-    // }
     render() {
 
       const flash_cards_rows = this.state.flash_cards.map(flash_card => {
-
         const {id, fallacy_name, fallacy_example} = flash_card
         const { user } = this.props
 
@@ -40,7 +29,6 @@ class FallaciesIndex extends React.Component {
             </td>
             <td>{fallacy_example}</td>
             <td>
-              <Link to={`/flash_cards/${id}/edit`}>Edit</Link>
             </td>
             <td>
               <DeleteCard id={id} user={user} component={DeleteCard}/>
@@ -53,9 +41,9 @@ class FallaciesIndex extends React.Component {
         <React.Fragment>
           <h1>Flash Card Index</h1>
           <h3 style={{display: 'inline-block'}}>
-            <Link to="/createNew/">Click here to ADD an Example</Link>
+            <Link to="/createNew/"> Click here to add an Example</Link>
             <br/>
-            <Link to="/home"> Go back to Home Page</Link>
+            <Link to="/home"> Go back to Home Page </Link>
 
           </h3>
           <table>

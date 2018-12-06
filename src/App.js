@@ -15,6 +15,7 @@ import CreateNew from './CreateNew'
 import ShowFallacy from './ShowFallacy'
 import HomeComponent from './HomeComponent'
 import UnauthenticatedHome from './UnauthenticatedHome'
+import EditCard from './EditCard'
 
 
 class App extends Component {
@@ -64,6 +65,10 @@ class App extends Component {
           )} />
         </main>
 
+        <Route exact path="/flash_cards/:id/editCard" render={()=>(
+          <EditCard user={user}/>
+        )} />
+
         <AuthenticatedRoute user={user} path='/flash_cards' render={() => (
           <FallaciesIndex user={user} />
         )} />
@@ -71,8 +76,11 @@ class App extends Component {
         <Route exact path="/createNew" render={()=>(
           <CreateNew user={user}/>
         )} />
+               
+        <Route exact path="/flash_cards/:id" render={()=>(
+          <ShowFallacy user={user}/>
+        )} />
         
-        <Route exact path="/flash_cards/:id" component={ShowFallacy} />
         <Route exact path="/home" component={HomeComponent} />
 
 
@@ -93,3 +101,8 @@ export default App
 //        <Route exact path="/flash_cards" render={()=>(
 //        <FallaciesIndex user={user}/>
 //        )} />
+
+
+// <Route exact path="/createNew" render={()=>(
+//   <CreateNew user={user}/>
+// )} />

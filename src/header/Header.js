@@ -29,7 +29,8 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h1>Logical Fallacies, React</h1>
+    <img src="https://image.flaticon.com/icons/svg/182/182327.svg" style={{width:'30px', margin:'10px'}}></img>
+    <h1>Logical Fallacies</h1>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }

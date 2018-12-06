@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import apiUrl from './apiConfig.js'
 
 
@@ -10,7 +9,6 @@ class DeleteCard extends React.Component{
       console.log(this.props)
       const { id } = this.props
       const user = this.props.user
-      // const id = this.state.flash_cards.id
 
       return fetch(apiUrl + `/flash_cards/${id}`, {
         method: 'DELETE',
