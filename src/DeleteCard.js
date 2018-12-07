@@ -1,10 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, browserHistory, withRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, browserHistory, withRouter, Route, Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './apiConfig.js'
 
 
 class DeleteCard extends React.Component{
+  state = {
+    isDeleted: false
+  }
     handleDelete = event => {
       event.preventDefault()
       console.log('This is the thing we are looking for: ', this.props)
@@ -18,11 +21,15 @@ class DeleteCard extends React.Component{
           'Authorization':`Token token=${user.token}`
         }
       }).then(()=>{
-        this.props.history.push('/home')
+        this.setState({isDeleted: true})
+        this.props.history.push('/flash_cards/') // the last slash is important!!!
       })
     }
 
     render(){
+      if(this.state.isDeleted === true) {
+        return <Redirect to='/flash_card_delete' /> // made up path
+      }
 
       return (
         <React.Fragment>

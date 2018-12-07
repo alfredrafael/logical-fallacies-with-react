@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 import './style/createNewStyle.scss'
 import axios from 'axios'
 import apiUrl from '../src/apiConfig.js'
@@ -8,7 +8,8 @@ class CreateNew extends React.Component {
   state = {
     flash_card:{
       fallacy_name: '',
-      fallacy_example: ''
+      fallacy_example: '',
+      new_fallacy: false
     },
     flashMessage: ''
   }
@@ -40,11 +41,17 @@ class CreateNew extends React.Component {
         }
       })
     }).then(()=>{
-      this.props.history.push('/home')
+      this.setState({
+        new_fallacy: true
+      })
+      this.props.history.push('/flash_cards/') // the trick!
     })
   }
 
   render() {
+    if(this.state.new_fallacy === true) {
+      return <Redirect to='/flash_cards' /> // name from server
+    }
 
     const user = this.props.user
 

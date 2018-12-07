@@ -3,7 +3,6 @@ import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-d
 import axios from 'axios'
 import EditCard from './EditCard'
 
-
 class FallacyShow extends React.Component {
   constructor(props){
     super (props)
@@ -25,7 +24,6 @@ class FallacyShow extends React.Component {
 
     const flash_card = response.data.flash_card
     //console.log(flash_card)
-
     this.setState({
       flash_card: flash_card
     })

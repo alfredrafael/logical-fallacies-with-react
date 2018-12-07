@@ -15,7 +15,7 @@ const unauthenticatedOptions = (
   <React.Fragment>
     <Link to="/sign-up">Sign Up</Link>
     <Link to="/sign-in">Sign In</Link>
-    <Link to="/">Home not authenticated</Link>
+    <Link to="/">About</Link>
 
   </React.Fragment>
 )
@@ -29,7 +29,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <img src="https://image.flaticon.com/icons/svg/182/182327.svg" style={{width:'30px', margin:'10px'}}></img>
+    <img src="https://image.flaticon.com/icons/svg/1172/1172857.svg" style={{width:'80px', margin:'10px'}}></img>
     <h1>Logical Fallacies</h1>
     <nav>
       { user && <span>Welcome, {user.email}</span>}

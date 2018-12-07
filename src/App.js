@@ -85,8 +85,6 @@ class App extends Component {
         
         <Route exact path="/" component={UnauthenticatedHome} />
 
-
-
       </React.Fragment>
     )
   }
@@ -95,15 +93,12 @@ class App extends Component {
 export default App
 
 //         <Route exact path="/unauthHome" component={UnauthenticatedHome} />
-
 //        <Route exact path="/createNew" component={CreateNew} />
-
 //        <Route exact path="/flash_cards" component={FallaciesIndex} />
 
 //        <Route exact path="/flash_cards" render={()=>(
 //        <FallaciesIndex user={user}/>
 //        )} />
-
 
 // <Route exact path="/createNew" render={()=>(
 //   <CreateNew user={user}/>

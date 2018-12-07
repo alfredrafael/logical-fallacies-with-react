@@ -1,10 +1,7 @@
-.testing {
-    background: blue;
-  }
-
-  .first-page-component {
+  .unauthenticatedHome {
       color: #fff;
       text-align: center;
+      height: 100vh;
     }
 
     div {
@@ -28,19 +25,40 @@
     .left-and-right {
       display: table;
       width: 100%;
-      margin: -1.5em 0;
+      margin: -6% 0;
+
+
     }
 
     .left-half {
-      background-color: rgb(133, 133, 233);
+   // background-color: rgb(133, 133, 233);
       position: absolute;
       left: 0px;
       width: 50%;
+      background: linear-gradient(rgba(193, 213, 242, 0.728), rgba(169, 198, 240, 0.728));
+    }
+
+    .left-half p {
+      color: black;
+      font-size: 18px;
+    }
+
+    .left-half h1 {
+      font-family: Libre Baskerville; 
+      font-size: 45px; 
+      margin-bottom: 10px;
+      color: rgb(13, 0, 255);
+
     }
 
     .right-half {
-      background-color: #5276ac;
+   // background-color: #5276ac;
       position: absolute;
       right: 0px;
       width: 50%;
+      background: linear-gradient(rgba(193, 213, 242, 0.728), rgba(169, 198, 240, 0.728));
+
+      background: linear-gradient(rgba(193, 213, 242, 0.728), rgba(169, 198, 240, 0.728)), url('https://d32ogoqmya1dw8.cloudfront.net/images/assessment/thinker.jpg')no-repeat center;
     }
+
+    

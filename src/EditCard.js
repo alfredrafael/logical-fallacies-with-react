@@ -1,15 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, withRouter, Route, Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './apiConfig.js'
-
-
 
 class EditCard extends React.Component {
   state = {
     flash_card:{
       fallacy_name: '',
-      fallacy_name: ''
+      fallacy_name: '',
+      isUpdated: false
     }
   }
 
@@ -21,7 +20,6 @@ class EditCard extends React.Component {
       flash_card: updatedCard
     })
   }
-
 
   submitEdit = async (event, user) => {
     event.preventDefault()
@@ -43,7 +41,10 @@ class EditCard extends React.Component {
         }
       })
     }).then(()=>{
-      this.props.history.push('/home')
+      this.setState({
+        isUpdated: true
+      })
+      this.props.history.push('/flash_cards/')
     })
   }
 
@@ -58,6 +59,9 @@ class EditCard extends React.Component {
   }
 
   render() {
+    if (this.state.isUpdated === true) {
+      return <Redirect to='/harry_potter_whatever'/>
+    }
     const { fallacy_example, fallacy_name } = this.state
     const { id, user } = this.props
 
