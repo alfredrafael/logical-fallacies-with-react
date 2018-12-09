@@ -16,11 +16,6 @@ class DeleteCard extends React.Component{
       const { id } = this.props
       const user = this.props.user
 
-      alertUser = () => (
-        alert('it worked')
-      )
-        
-
       return fetch(apiUrl + `/flash_cards/${id}`, {
         method: 'DELETE',
         headers: {
@@ -29,7 +24,6 @@ class DeleteCard extends React.Component{
         }
       }).then(()=>{
         this.setState({isDeleted: true})
-        this.alertUser
         this.props.history.push('/flash_cards/') // the last slash is important!!!
       })
     }

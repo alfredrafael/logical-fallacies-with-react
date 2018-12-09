@@ -35,11 +35,13 @@ class FallacyShow extends React.Component {
     const {user} = this.props
     return (
       <React.Fragment>
-        <h4>Fallacy:</h4>
-        <p> This is the name: {this.state.flash_card.fallacy_name}</p>
-        <p> This is the example: {this.state.flash_card.fallacy_example}</p>
-        <p>Edit Fallacy</p>
-        <EditCard id={id} user={user} component={EditCard}/>
+        <div style={{height: '100vh'}}>
+          <p> <h1><strong>{this.state.flash_card.fallacy_name}</strong></h1></p>
+          <p> {this.state.flash_card.fallacy_example}</p>
+          <Link to="/home">  Go back to Home Page</Link>
+          <Link to="/flash_cards/"> Go to see all </Link>
+          <EditCard id={id} user={user} component={EditCard}/>
+        </div>
       </React.Fragment>
     )
   };

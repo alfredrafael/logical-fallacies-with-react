@@ -67,7 +67,7 @@ class UnauthenticatedHome extends React.Component {
             <div className="right-half">
               <article>
                 <h1>Right Half</h1>
-                <p>This is the right half of the page</p>
+                <p>Picture go here</p>
               </article>
             </div>
           </div>

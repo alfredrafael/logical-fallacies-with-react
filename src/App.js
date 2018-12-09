@@ -69,6 +69,10 @@ class App extends Component {
           <EditCard user={user}/>
         )} />
 
+        <Route exact path="/flash_cards/:id" render={()=>(
+          <ShowFallacy user={user}/>
+        )} />
+
         <AuthenticatedRoute user={user} path='/flash_cards' render={() => (
           <FallaciesIndex user={user} />
         )} />
@@ -77,9 +81,6 @@ class App extends Component {
           <CreateNew user={user} />
         )} />
 
-        <Route exact path="/flash_cards/:id" render={()=>(
-          <ShowFallacy user={user}/>
-        )} />
 
         <Route exact path="/home" component={HomeComponent} />
         

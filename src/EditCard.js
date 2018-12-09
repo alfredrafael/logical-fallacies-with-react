@@ -68,14 +68,13 @@ class EditCard extends React.Component {
     return (
       <React.Fragment>
 
-        <h1>Edit Your Fallacy</h1>
 
         <form>
-          <label htmlFor='fallacy_name'>Fallacy Name</label>
+          <label htmlFor='fallacy_name'>Edit fallacy name</label>
 
           <input id='fallacy_name' name='fallacy_name' type="text" value={fallacy_name} onChange={this.handleChange}/>
 
-          <label htmlFor='fallacy_example'>Your Example</label>
+          <label htmlFor='fallacy_example'>Edit your example</label>
 
           <input id='fallacy_example' name='fallacy_example' type="text" value={fallacy_example} onChange={this.handleChange} />
 

@@ -25,9 +25,9 @@ class FallaciesIndex extends React.Component {
 
         return (
 
-          <tr key={id}>
+          <tr key={id}  style={{border: 'grey solid .5px'}}>
             <td>
-              <Link to={`/flash_cards/${id}`}>{ fallacy_name }</Link>
+              <Link to={`/flash_cards/${id}`}><h5> <strong>{fallacy_name }</strong></h5></Link>
             </td>
             <td>{fallacy_example}</td>
             <td>
@@ -41,13 +41,12 @@ class FallaciesIndex extends React.Component {
 
       return (
         <React.Fragment>
-          <h1>Flash Card Index</h1>
-          <h3 style={{display: 'inline-block'}}>
-            <Link to="/createNew/"> Click here to add an Example</Link>
-            <br/>
-            <Link to="/home"> Go back to Home Page </Link>
-
-          </h3>
+          <h5 style={{display: 'inline-block'}}>
+            <Link to="/createNew/"> Click here to add an Example /</Link>
+          </h5>
+          <h5 style={{display: 'inline-block'}}>
+            <Link to="/home">  Go back to Home Page</Link>
+          </h5>
           <table>
             <tbody>
 
