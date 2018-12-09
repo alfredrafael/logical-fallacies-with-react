@@ -7,7 +7,7 @@
 
 This repository is develop as a continuation of my previous [Client Website](https://alfredrafael.github.io/logical-fallacy-client/) "Logical fallacies: A repository of user generated examples". Is also uses its database code. 
 
-![Find a ScreenShot of my Project Here]('./public/projectScreenshot.png')
+![Find a ScreenShot of my Project Here](public/projectScreenshot.png)
 
 Rationale:
 
