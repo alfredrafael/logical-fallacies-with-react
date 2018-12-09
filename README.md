@@ -7,6 +7,8 @@
 
 This repository is develop as a continuation of my previous [Client Website](https://alfredrafael.github.io/logical-fallacy-client/) "Logical fallacies: A repository of user generated examples". Is also uses its database code. 
 
+![alt text](http://public/projectScreenshot.png)
+
 Rationale:
 
 Postmodernism radical ideology have spiked violence across the USA, and the Western World. The good news are: knowing the logical flaws within these ideologies might be able to help us from the chaos they produce! A as a developer who taught elementary and high school students, I am fascinated by philosophy and the ways in which it can improve our lives. To learn how to deconstruct logical fallacies in others' arguments, and IDENTIFYING faults in our own is a life-skill that can make our lives so much richer. By learning the terminology used to refer to certian logical fallacies, we become able to IDENTIFY them (in others, or even within our own heads) and therefore curve our behavior with a more productive and solid response.
