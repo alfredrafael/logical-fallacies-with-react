@@ -50,7 +50,7 @@ class EditCard extends React.Component {
 
   async componentDidMount() {
     const id = this.props.match.params.id
-    const response = await axios.get(`http://localhost:4741/flash_cards/${id}`)
+    const response = await axios.get(apiUrl + `/${id}`)
     const flash_card = response.data.flash_card
 
     this.setState({

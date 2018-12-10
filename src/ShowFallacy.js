@@ -2,6 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, withRouter, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 import EditCard from './EditCard'
+import apiUrl from '../src/apiConfig.js'
+
 
 class FallacyShow extends React.Component {
   constructor(props){
@@ -19,7 +21,7 @@ class FallacyShow extends React.Component {
 
     const id = this.props.match.params.id
     console.log(id)
-    const response = await axios.get(`http://localhost:4741/flash_cards/${id}`)
+    const response = await axios.get(apiUrl + `/flash_cards/${id}`)
     console.log(flash_card)
 
     const flash_card = response.data.flash_card

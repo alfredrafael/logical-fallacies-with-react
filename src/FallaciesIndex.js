@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import apiUrl from '../src/apiConfig.js'
+import apiUrl from './apiConfig.js'
 import DeleteCard from './DeleteCard.js'
 import ShowFallacy from './ShowFallacy.js'
 import { BrowserRouter as Router, browserHistory, withRouter, Route, Link } from 'react-router-dom'
@@ -13,7 +13,7 @@ class FallaciesIndex extends React.Component {
     }
 
     async componentDidMount() {
-      const response = await axios.get('http://localhost:4741/flash_cards')
+      const response = await axios.get(apiUrl + '/flash_cards')
       this.setState({flash_cards:response.data.flash_cards})
     }
 
