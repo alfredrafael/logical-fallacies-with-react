@@ -1,5 +1,6 @@
 // const apiUrl = 'http://localhost:4741' (during production)
-const apiUrl = '../apiConfig.js' 
+//const apiUrl = './../apiConfig.js' 
+import apiUrl from './../apiConfig.js'
 
 
 export const handleErrors = res => {
